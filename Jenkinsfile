@@ -1,12 +1,30 @@
 Jenkinsfile (Declarative Pipeline)
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'maven:3.9.3-eclipse-temurin-17-alpine' } }
+    agent any
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
-                sh 'mvn --version'
+                sh 'echo "Fail!"; exit 1'
             }
+        }
+    }
+    post {
+        always {
+            echo 'Siempre se ejecuta'
+        }
+        success {
+            echo 'Ejecucion exitosa'
+        }
+        failure {
+            echo 'Fallo en la ejecucion'
+        }
+        unstable {
+            echo 'Ejecucion inestable'
+        }
+        changed {
+            echo 'La Pipeline ha cambiado'
+            echo 'Por ejemplo, Si estaba fallando pero ahora es exitosa'
         }
     }
 }
