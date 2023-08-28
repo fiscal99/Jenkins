@@ -7,8 +7,8 @@ pipeline {
                 ok "Siguiente"
                 submitter "alice,bob"
                 parameters {
-                    string(nombre: 'NOMBRE', defaultValue: 'JENKINS', description: 'Cual es tu nombre?')
-                    String(edad: 'EDAD', descriptions: 'Ingresa tu edad')
+                    string(name: 'NOMBRE', defaultValue: 'JENKINS', description: 'Cual es tu nombre?')
+                    string(name: 'EDAD', descriptions: 'Ingresa tu edad')
                 }
             }
             steps {
