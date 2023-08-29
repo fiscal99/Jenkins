@@ -12,8 +12,9 @@ pipeline {
                 }
             }
             steps {
+
                 echo "Hola, ${NOMBRE}, mucho gusto conocerte."
-                echo " tienes ${EDAD} años."
+                echo " tienes ${EDAD} años." 
             }
         }
     }
